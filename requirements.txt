@@ -1,0 +1,46 @@
+# Core Data Science
+numpy
+pandas
+scipy
+scikit-learn
+scikit-surprise
+
+# Deep Learning
+torch
+torchvision
+
+# NLP & Embeddings
+sentence-transformers
+
+# API
+fastapi
+uvicorn[standard]
+pydantic
+
+# Dashboard
+streamlit
+plotly
+
+# Experiment Tracking
+mlflow
+
+# Storage & Caching
+redis
+
+# Configuration
+pyyaml
+
+# Utilities
+tqdm
+joblib
+requests
+python-dotenv
+
+# Testing
+pytest
+
+# Notebook support
+jupyter
+ipykernel
+matplotlib
+seaborn

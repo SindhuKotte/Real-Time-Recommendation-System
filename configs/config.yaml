@@ -1,0 +1,83 @@
+project:
+  name: "E-Commerce Real-Time Recommendation System"
+  version: "1.0.0"
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  events_file: "events.csv"
+  items_file: "item_properties_part1.csv"
+  items_file_2: "item_properties_part2.csv"
+  category_tree_file: "category_tree.csv"
+
+preprocessing:
+  min_user_interactions: 5
+  min_item_interactions: 5
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+  interaction_weights:
+    view: 1.0
+    addtocart: 3.0
+    transaction: 5.0
+
+models:
+  collaborative_filtering:
+    algorithm: "knn"
+    k_neighbors: 20
+    similarity: "cosine"
+    min_k: 5
+
+  matrix_factorization:
+    algorithm: "svd"
+    n_factors: 100
+    n_epochs: 20
+    lr_all: 0.005
+    reg_all: 0.02
+
+  content_based:
+    n_features: 500
+    similarity_metric: "cosine"
+    top_n: 10
+
+  ncf:
+    embedding_dim: 64
+    hidden_layers: [128, 64, 32]
+    dropout: 0.2
+    learning_rate: 0.001
+    batch_size: 512
+    epochs: 10
+    negative_samples: 4
+    weight_decay: 0.0001
+
+  hybrid:
+    weights:
+      collaborative: 0.3
+      matrix_factorization: 0.3
+      content_based: 0.2
+      ncf: 0.2
+
+evaluation:
+  top_k: [5, 10, 20]
+  metrics:
+    - precision_at_k
+    - recall_at_k
+    - ndcg_at_k
+    - map_at_k
+    - hit_rate
+    - coverage
+    - diversity
+
+mlflow:
+  tracking_uri: "mlruns"
+  experiment_name: "ecommerce-recommendations"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cache_ttl: 3600
+  default_top_n: 10
+
+dashboard:
+  host: "0.0.0.0"
+  port: 8501
