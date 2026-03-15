@@ -2,6 +2,20 @@
 
 An end-to-end product recommendation engine built on the **Retail Rocket** e-commerce dataset, implementing multiple recommendation strategies with real-time serving, experiment tracking, and an interactive dashboard.
 
+## Screenshots
+
+### Dashboard — Personalized Recommendations & User History
+![Recommendations](screenshots/Screenshot_1.png)
+
+### Top-10 Recommendations with Relevance Scores
+![Recommendation Results](screenshots/Screenshot_2.png)
+
+### Model Performance Comparison & Overlap Analysis
+![Model Comparison](screenshots/Screenshot_3.png)
+
+### Dataset Analytics (411K interactions, 65K users, 36K items, 99.98% sparsity)
+![Data Insights](screenshots/Screenshot_4.png)
+
 ## Architecture
 
 ```
@@ -88,7 +102,7 @@ An end-to-end product recommendation engine built on the **Retail Rocket** e-com
 ### 1. Setup
 
 ```bash
-git clone https://github.com/yourusername/Real-Time-Recommendation-System.git
+git clone https://github.com/SindhuKotte/Real-Time-Recommendation-System.git
 cd Real-Time-Recommendation-System
 
 python -m venv venv
